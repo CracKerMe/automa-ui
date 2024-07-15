@@ -39,7 +39,7 @@ const year = ref(new Date().getFullYear());
   font-size: 16px;
 
   .link__item {
-    color: var(--link-color);
+    color: var(--el-color-primary);
   }
 }
 </style>

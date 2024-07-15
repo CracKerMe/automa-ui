@@ -12,6 +12,11 @@ const messages = Object.fromEntries(
     if (key.endsWith('.ts')) {
       return [key.slice(14, -3), value.default];
     }
+    // 如果是json结尾
+    const json = key.endsWith('.json');
+    if (json) {
+      return [key.slice(14, -5), value.default];
+    }
     const yaml = key.endsWith('.yaml');
     return [key.slice(14, yaml ? -5 : -4), value.default];
   }),

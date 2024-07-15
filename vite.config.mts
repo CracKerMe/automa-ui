@@ -13,6 +13,7 @@ import Unocss from 'unocss/vite';
 import VueDevTools from 'vite-plugin-vue-devtools';
 import Icons from 'unplugin-icons/vite';
 import viteCompression from 'vite-plugin-compression';
+import { createSvgIconsPlugin } from 'vite-plugin-svg-icons';
 
 const pwaOptions: Partial<VitePWAOptions> = {
   mode: 'development',
@@ -148,6 +149,10 @@ export default defineConfig({
     Icons({
       autoInstall: true,
       compiler: 'vue3',
+    }),
+    createSvgIconsPlugin({
+      iconDirs: [path.resolve(process.cwd(), 'src/assets/svg')],
+      symbolId: 'icon-[dir]-[name]',
     }),
   ],
   server: {

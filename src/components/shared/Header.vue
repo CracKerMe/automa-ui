@@ -12,7 +12,7 @@ import DropDown from '@/components/downDown/index.vue';
     class="flex container h-16 items-center justify-between w-full bg-opacity-100"
   >
     <div class="flex flex-row justify-between items-center">
-      <router-link to="/" class="flex items-center">
+      <router-link to="/" class="logo flex items-center">
         <img
           src="@/assets/images/logo.svg"
           alt="Logo"
@@ -31,22 +31,28 @@ import DropDown from '@/components/downDown/index.vue';
           <router-link to="/resources" class="nav-item">
             资源
             <i-material-symbols:keyboard-arrow-down
-              class="nav-item-arrow-down"
+              class="nav-item-arrow-down transition-all duration-300"
             />
-            <i-material-symbols:keyboard-arrow-up class="nav-item-arrow-up" />
           </router-link>
         </template>
-        <div class="resource-dropdown" />
+        <div class="resource-dropdown bg-white dark:bg-black" />
       </DropDown>
     </div>
     <div class="flex flex-row justify-between items-center ml-auto">
       <LangSwitcher />
-      <ThemeSwitcher class="mx-5" />
+      <div>
+        <ThemeSwitcher class="mx-5" />
+      </div>
       <LoginButton />
     </div>
   </nav>
 </template>
 <style lang="scss" scoped>
+.logo {
+  &:hover p {
+    color: var(--el-color-primary);
+  }
+}
 .nav-item {
   padding: 0.35rem 0.75rem;
   border-radius: 0.375rem;
@@ -79,25 +85,12 @@ import DropDown from '@/components/downDown/index.vue';
 
   &:hover {
     background-color: rgb(39, 39, 42, 0.05);
-  }
-
-  .nav-item-arrow-up {
-    opacity: 0;
-    width: 0;
-    height: 0;
+    color: var(--el-color-primary);
   }
 
   &:hover {
     .nav-item-arrow-down {
-      opacity: 0;
-      width: 0;
-      height: 0;
-    }
-
-    .nav-item-arrow-up {
-      opacity: 1;
-      width: auto;
-      height: auto;
+      transform: rotate(180deg);
     }
   }
 }
@@ -108,7 +101,6 @@ import DropDown from '@/components/downDown/index.vue';
   &-dropdown {
     width: 318px;
     height: 360px;
-    background: #ffffff;
     border-radius: 10px;
   }
 
