@@ -22,7 +22,7 @@ import DropDown from '@/components/downDown/index.vue';
       </router-link>
     </div>
     <div
-      class="flex-grow text-gray-600 hidden lg:flex h-full justify-center items-center"
+      class="flex-grow text-gray-600 dark:text-gray-300 hidden lg:flex h-full justify-center items-center"
     >
       <router-link to="/about" class="nav-item"> 关于 </router-link>
       <router-link to="/pricing" class="nav-item"> 价格 </router-link>
@@ -79,7 +79,6 @@ import DropDown from '@/components/downDown/index.vue';
 
   &:hover {
     background-color: rgb(39, 39, 42, 0.05);
-    color: #000000;
   }
 
   .nav-item-arrow-up {
