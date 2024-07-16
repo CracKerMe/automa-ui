@@ -1,11 +1,11 @@
 <script lang="ts" setup>
-// import { useI18n } from 'vue-i18n';
+import { useI18n } from 'vue-i18n';
 import LoginButton from '../LoginButton.vue';
 import ThemeSwitcher from '../ThemeSwitcher.vue';
 import LangSwitcher from '../LangSwitcher.vue';
 import DropDown from '@/components/downDown/index.vue';
 
-// const { t } = useI18n();
+const { t } = useI18n();
 </script>
 <template>
   <nav
@@ -24,24 +24,29 @@ import DropDown from '@/components/downDown/index.vue';
     <div
       class="flex-grow text-gray-600 dark:text-gray-300 hidden lg:flex h-full justify-center items-center"
     >
-      <router-link to="/about" class="nav-item"> 关于 </router-link>
-      <router-link to="/pricing" class="nav-item"> 价格 </router-link>
+      <router-link to="/about" class="nav-item">{{
+        t('common.about')
+      }}</router-link>
+      <router-link to="/pricing" class="nav-item">{{
+        t('common.pricing')
+      }}</router-link>
       <DropDown class="resource por">
         <template #trigger>
           <router-link to="/resources" class="nav-item">
-            资源
+            {{ t('common.resources') }}
             <i-material-symbols:keyboard-arrow-down
-              class="nav-item-arrow-down"
+              class="nav-item-arrow-down transition ease-in-out duration-300"
             />
-            <i-material-symbols:keyboard-arrow-up class="nav-item-arrow-up" />
           </router-link>
         </template>
-        <div class="resource-dropdown" />
+        <div class="resource-dropdown bg-white dark:bg-black rounded-lg" />
       </DropDown>
     </div>
     <div class="flex flex-row justify-between items-center ml-auto">
       <LangSwitcher />
-      <ThemeSwitcher class="mx-5" />
+      <div>
+        <ThemeSwitcher class="mx-5" />
+      </div>
       <LoginButton />
     </div>
   </nav>
@@ -81,35 +86,23 @@ import DropDown from '@/components/downDown/index.vue';
     background-color: rgb(39, 39, 42, 0.05);
   }
 
-  .nav-item-arrow-up {
-    opacity: 0;
-    width: 0;
-    height: 0;
-  }
-
   &:hover {
     .nav-item-arrow-down {
-      opacity: 0;
-      width: 0;
-      height: 0;
-    }
-
-    .nav-item-arrow-up {
       opacity: 1;
       width: auto;
       height: auto;
+      transform: rotate(180deg);
     }
   }
 }
 
 .resource {
   margin-left: 1rem;
+  z-index: 50;
 
   &-dropdown {
     width: 318px;
     height: 360px;
-    background: #ffffff;
-    border-radius: 10px;
   }
 
   &::before {

@@ -1,0 +1,27 @@
+{
+  "detail.loginTip": "这是详情页，需要登录",
+  "common.hello": "使用 Vue3 + TypeScript + Vite + Pinia 开发的项目模板🚀",
+  "common.welcome": "欢迎, {name}",
+  "common.template": "模版",
+  "common.docs": "文档",
+  "common.example": "示例",
+  "common.isSupported": "是否支持",
+  "common.menus": "菜单",
+  "common.home": "主页",
+  "common.Detail": "详情页",
+  "common.about": "关于",
+  "common.logout": "登出",
+  "common.login": "登入",
+  "common.pricing": "价格",
+  "common.contact": "联系我们",
+  "common.resources": "资源",
+  "common.features": "功能",
+  "common.faq": "常见问题",
+  "common.blog": "博客",
+  "common.support": "支持",
+  "common.privacy": "隐私",
+  "common.terms": "条款",
+  "common.copyright": "版权",
+  "common.allRightsReserved": "所有版权保留"
+
+}
