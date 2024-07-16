@@ -25,17 +25,17 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/403',
     name: '403',
-    component: () => import('../pages/system-view/no-permission.vue'),
+    component: () => import('@/pages/system-view/no-permission.vue'),
   },
   {
     path: '/500',
     name: '500',
-    component: () => import('../pages/system-view/service-error.vue'),
+    component: () => import('@/pages/system-view/service-error.vue'),
   },
   {
     path: '/:pathMatch(.*)*',
     name: 'page404',
-    component: () => import('../pages/system-view/not-found.vue'),
+    component: () => import('@/pages/system-view/not-found.vue'),
   },
 ];
 
@@ -46,7 +46,7 @@ const router = createRouter({
 
 router.beforeEach(async (to) => {
   const token = getToken();
-  if (!token && to.name !== 'Index') {
+  if (to.meta.requireAuth && !token) {
     return { name: 'Index' };
   }
 });

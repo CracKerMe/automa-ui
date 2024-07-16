@@ -12,7 +12,7 @@ const { t } = useI18n();
     class="flex container h-16 items-center justify-between w-full bg-opacity-100"
   >
     <div class="flex flex-row justify-between items-center">
-      <router-link to="/" class="flex items-center">
+      <router-link to="/" class="logo flex items-center">
         <img
           src="@/assets/images/logo.svg"
           alt="Logo"
@@ -35,7 +35,7 @@ const { t } = useI18n();
           <router-link to="/resources" class="nav-item">
             {{ t('common.resources') }}
             <i-material-symbols:keyboard-arrow-down
-              class="nav-item-arrow-down transition ease-in-out duration-300"
+              class="nav-item-arrow-down transition-all duration-300"
             />
           </router-link>
         </template>
@@ -52,6 +52,11 @@ const { t } = useI18n();
   </nav>
 </template>
 <style lang="scss" scoped>
+.logo {
+  &:hover p {
+    color: var(--el-color-primary);
+  }
+}
 .nav-item {
   padding: 0.35rem 0.75rem;
   border-radius: 0.375rem;
@@ -84,13 +89,11 @@ const { t } = useI18n();
 
   &:hover {
     background-color: rgb(39, 39, 42, 0.05);
+    color: var(--el-color-primary);
   }
 
   &:hover {
     .nav-item-arrow-down {
-      opacity: 1;
-      width: auto;
-      height: auto;
       transform: rotate(180deg);
     }
   }

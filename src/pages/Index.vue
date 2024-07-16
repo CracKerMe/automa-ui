@@ -61,7 +61,7 @@ const init = (data: any) => {
           left: '4%',
           right: '4%',
           top: '1%',
-          bottom: '8%',
+          bottom: '1%',
           show: true,
           backgroundColor: '#000',
         },
@@ -190,6 +190,7 @@ const init = (data: any) => {
       params.event.event.screenY -
       getDistanceToTop(boxRef.value) -
       boxRef.value.offsetTop +
+      document.documentElement.scrollTop +
       'px';
     setTimeout(() => {
       echartsTipsRef.value.style.display = 'block';
@@ -257,7 +258,7 @@ function getDistanceToTop(element: HTMLElement) {
   border: 1px solid var(--el-border-color-base);
   border-radius: 4px;
   box-shadow: var(--el-box-shadow-light);
-  padding: 20px;
+  padding: 20px 20px 50px;
 }
 
 .echarts-detail-data {
