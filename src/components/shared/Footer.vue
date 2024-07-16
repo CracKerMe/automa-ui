@@ -10,7 +10,7 @@ const year = ref(new Date().getFullYear());
   <div
     class="footer w-full flex justify-center items-center text-primary-dark dark:text-ternary-light"
   >
-    @{{ year }}
+    @{{ year }}&nbsp;&nbsp;
     <a
       class="link__item underline"
       href="https://github.com/yugasun/vue-template"
