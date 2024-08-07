@@ -11,7 +11,6 @@ function toggleTheme() {
 
 <template>
   <el-button
-    :type="!isDark ? 'info' : 'default'"
     :icon="!isDark ? Moon : Sunny"
     :circle="true"
     @click.prevent="toggleTheme"

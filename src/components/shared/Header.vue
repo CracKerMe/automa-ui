@@ -18,7 +18,7 @@ const { t } = useI18n();
           alt="Logo"
           class="w-10 inline-block"
         />
-        <p class="ml-2 inline-block text-lg align-middle">ACME</p>
+        <p class="ml-2 inline-block text-lg align-middle">Turns</p>
       </router-link>
     </div>
     <div
@@ -32,47 +32,53 @@ const { t } = useI18n();
       }}</router-link>
       <DropDown class="resource por">
         <template #trigger>
-          <router-link to="/resources" class="nav-item">
+          <span class="nav-item">
             {{ t('common.resources') }}
             <i-material-symbols:keyboard-arrow-down
               class="nav-item-arrow-down transition-all duration-300"
             />
-          </router-link>
+          </span>
         </template>
         <div
-          class="resource-dropdown rounded-lg shadow-2xl bottom-auto left-1/2 hidden lg:block -translate-x-1/2 max-w-5xl xl:max-w-6xl mt-2 mx-auto bg-white dark:bg-gray-800 transform rounded-lg transition-transform ui-card p-4 bottom-auto left-1/2 hidden lg:block -translate-x-1/2 max-w-5xl xl:max-w-6xl mt-2 mx-auto"
+          class="resource-dropdown rounded-lg shadow-2xl bottom-auto left-1/2 hidden lg:block -translate-x-1/2 max-w-5xl xl:max-w-6xl mt-2 mx-auto bg-white dark:bg-black transform rounded-lg transition-transform ui-card p-4 bottom-auto left-1/2 hidden lg:block -translate-x-1/2 max-w-5xl xl:max-w-6xl mt-2 mx-auto"
         >
           <nav class="flex space-x-2 xl:space-x-4">
             <!-- Tutorials / Documentation / Blog / Youtube -->
             <router-link
-              to="/resources/tutorials"
-              class="p-4 hover:bg-gray-2 rounded-lg transition w-64 lg:w-72"
+              to="/tutorials"
+              class="p-4 hover:bg-gray-2 rounded-lg transition w-64 lg:w-72 dark:hover:bg-gray-800"
             >
-              <span class="p-2 rounded-lg bg-gray-1 inline-block leading-none">
+              <span
+                class="p-2 rounded-lg bg-gray-1 inline-block leading-none dark:bg-gray-900"
+              >
                 <i-material-symbols:book-4-outline class="text-3xl" />
               </span>
               <p class="font-semibold mt-2">{{ t('common.tutorials') }}</p>
               <p class="text-gray-600 leading-tight mt-px">
-                Learn how to automate your workflow using Automa
+                Learn how to automate your workflow using Turns
               </p>
             </router-link>
             <router-link
-              to="/resources/documentation"
-              class="p-4 hover:bg-gray-2 rounded-lg transition w-64 lg:w-72"
+              to="/documentation"
+              class="p-4 hover:bg-gray-2 rounded-lg transition w-64 lg:w-72 dark:hover:bg-gray-800"
             >
-              <span class="p-2 rounded-lg bg-gray-1 inline-block leading-none">
+              <span
+                class="p-2 rounded-lg bg-gray-1 inline-block leading-none dark:bg-gray-900"
+              >
                 <i-material-symbols:apk-document-outline class="text-3xl" />
               </span>
               <p class="font-semibold mt-2">{{ t('common.documentation') }}</p>
               <p class="text-gray-600 leading-tight mt-px">
-                Learn about Automa and its functionalities
+                Learn about Turns and its functionalities
               </p>
             </router-link>
             <router-link
-              to="/resources/blog"
-              class="p-4 hover:bg-gray-2 rounded-lg transition w-64 lg:w-72"
+              to="/blog"
+              class="p-4 hover:bg-gray-2 rounded-lg transition w-64 lg:w-72 dark:hover:bg-gray-800"
             >
-              <span class="p-2 rounded-lg bg-gray-1 inline-block leading-none">
+              <span
+                class="p-2 rounded-lg bg-gray-1 inline-block leading-none dark:bg-gray-900"
+              >
                 <i-ic:outline-edit-location class="text-3xl" />
               </span>
               <p class="font-semibold mt-2">{{ t('common.blog') }}</p>
@@ -81,10 +87,12 @@ const { t } = useI18n();
               </p>
             </router-link>
             <router-link
-              to="/resources/youtube"
-              class="p-4 hover:bg-gray-2 rounded-lg transition w-64 lg:w-72"
+              to="/youtube"
+              class="p-4 hover:bg-gray-2 rounded-lg transition w-64 lg:w-72 dark:hover:bg-gray-800"
             >
-              <span class="p-2 rounded-lg bg-gray-1 inline-block leading-none">
+              <span
+                class="p-2 rounded-lg bg-gray-1 inline-block leading-none dark:bg-gray-900"
+              >
                 <i-tdesign:logo-youtube class="text-3xl" />
               </span>
               <p class="font-semibold mt-2">{{ t('common.youtube') }}</p>
@@ -111,6 +119,7 @@ const { t } = useI18n();
     color: var(--el-color-primary);
   }
 }
+
 .nav-item {
   padding: 0.35rem 0.75rem;
   border-radius: 0.375rem;
@@ -176,6 +185,19 @@ const { t } = useI18n();
   ::v-deep(.drop-down-box) {
     left: 0;
     top: 40px;
+  }
+}
+</style>
+
+<style lang="scss">
+.dark {
+  .nav-item {
+    &.router-link-exact-active {
+      color: #ffffff;
+    }
+    &:hover {
+      background-color: rgb(39, 39, 42, 0.05);
+    }
   }
 }
 </style>

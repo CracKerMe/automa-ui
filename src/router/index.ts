@@ -23,6 +23,14 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import('@/pages/Detail.vue'),
   },
   {
+    path: '/contacts',
+    name: 'Contacts',
+    meta: {
+      title: 'Contacts Page',
+    },
+    component: () => import('@/pages/Contacts.vue'),
+  },
+  {
     path: '/403',
     name: '403',
     component: () => import('@/pages/system-view/no-permission.vue'),

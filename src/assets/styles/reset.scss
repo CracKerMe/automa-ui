@@ -100,7 +100,8 @@ section {
   display: block;
 }
 
-html, body {
+html,
+body {
   height: 100%;
 }
 
@@ -111,7 +112,7 @@ body {
 
 html.dark {
   body {
-    background-color: #222222;
+    background-color: #222;
   }
 }
 
@@ -167,3 +168,13 @@ img {
 //     outline: none;
 //   }
 // }
+
+html.is-not-safari {
+  scrollbar-width: thin;
+  scrollbar-color: var(--el-scrollbar-bg-color) var(--el-fill-color-light);
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--el-scrollbar-bg-color) var(--el-fill-color-light);
+  }
+}
