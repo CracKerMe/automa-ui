@@ -1,11 +1,14 @@
 <script lang="ts" setup>
 import { ref } from 'vue';
+import { useI18n } from 'vue-i18n';
 
 import { toast } from '@/utils/toast';
 import API from '@/api';
 import { useUserStore } from '@/store/user';
 
 const userStore = useUserStore();
+const router = useRouter();
+const { t } = useI18n();
 
 const isLoginDialogVisible = ref(false);
 const isLogoutDialogVisible = ref(false);
@@ -46,16 +49,40 @@ function logoutConfirm() {
   userStore.updateUser(null);
   isLogoutDialogVisible.value = false;
 }
+
+function goProfilePage() {
+  router.push('/profile');
+}
 </script>
 
 <template>
   <div class="user-info">
-    <el-button v-if="userStore.isLogin" @click="logout">登出</el-button>
-    <el-button v-else id="login-btn" @click="showLoginDialog">登录</el-button>
+    <div v-if="userStore.isLogin" class="flex items-center">
+      <el-dropdown>
+        <p class="leading-none">{{ userStore?.userInfo?.username }}</p>
+        <template #dropdown>
+          <el-dropdown-menu>
+            <el-dropdown-item @click="goProfilePage">
+              个人中心
+            </el-dropdown-item>
+            <el-dropdown-item @click="logout"> 退出登录 </el-dropdown-item>
+          </el-dropdown-menu>
+        </template>
+      </el-dropdown>
+    </div>
+    <el-button v-else id="login-btn" @click="showLoginDialog">
+      {{ t('common.login') }}
+    </el-button>
   </div>
 
   <!-- login dialog -->
-  <el-dialog id="login-dialog" v-model="isLoginDialogVisible" title="登录">
+  <el-dialog
+    id="login-dialog"
+    v-model="isLoginDialogVisible"
+    :append-to-body="true"
+    :align-center="true"
+    :title="t('common.login')"
+  >
     <el-form :model="formData">
       <el-form-item label="用户名">
         <el-input v-model="formData.username" autocomplete="off" />
@@ -78,7 +105,12 @@ function logoutConfirm() {
   </el-dialog>
 
   <!-- logout dialog -->
-  <el-dialog v-model="isLogoutDialogVisible" title="Logout">
+  <el-dialog
+    v-model="isLogoutDialogVisible"
+    :append-to-body="true"
+    :align-center="true"
+    title="Logout"
+  >
     <span>你确定要退出登录么?</span>
     <template #footer>
       <span class="dialog-footer">
@@ -91,10 +123,5 @@ function logoutConfirm() {
 <style lang="scss" scoped>
 .user-info {
   display: flex;
-
-  .user {
-    margin-right: 20px;
-    line-height: 32px;
-  }
 }
 </style>

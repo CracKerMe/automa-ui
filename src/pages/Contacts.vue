@@ -1,11 +1,8 @@
 <template>
-  <el-container>
-    <el-header>
-      <Header />
-    </el-header>
-    <el-main class="main">
-      <h1>contacts</h1>
-      <div ref="fileZoneRef" class="file-zone" @click="handleClickFn">
+  <div class="flex flex-col gap-4xl">
+    <h1 class="text-center">contacts</h1>
+    <div class="flex justify-center items-center">
+      <div ref="fileZoneRef" class="file-zone p-12" @click="handleClickFn">
         <input
           ref="fileInputRef"
           type="file"
@@ -17,7 +14,7 @@
           <div class="file-zone-icon"></div>
           <div class="file-zone-text">
             <div class="file-zone-title">
-              <div class="file-zone-title-text">
+              <div class="file-zone-title-text shadow-2xl">
                 Drag and drop your files here or
               </div>
               <div class="file-zone-title-button">
@@ -27,16 +24,11 @@
           </div>
         </div>
       </div>
-    </el-main>
-    <el-footer style="--el-footer-height: 40px">
-      <Footer />
-    </el-footer>
-  </el-container>
+    </div>
+  </div>
 </template>
 
 <script setup lang="ts">
-import Header from '@/components/shared/Header.vue';
-import Footer from '@/components/shared/Footer.vue';
 import * as XLSX from 'xlsx';
 
 const fileInputRef = ref<HTMLInputElement>();
@@ -80,12 +72,12 @@ const handleChangeFn = (e: Event) => {
 
 <style lang="scss" scoped>
 .file-zone {
+  width: auto;
   display: flex;
-  height: 100px;
   justify-content: center;
   align-items: center;
-  border: 1px dashed var(--el-border-color-base);
-  border-radius: 4px;
+  border: 1px dashed var(--el-border-color);
+  border-radius: 14px;
   cursor: pointer;
   &:hover {
     border-color: var(--el-color-primary);
@@ -129,10 +121,7 @@ const handleChangeFn = (e: Event) => {
           font-size: 14px;
           font-weight: 500;
           color: var(--el-text-color-secondary);
-          margin-bottom: 10px;
-        }
-        .file-zone-title-button {
-          margin-left: 10px;
+          margin-bottom: 20px;
         }
       }
     }

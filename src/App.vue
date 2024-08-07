@@ -53,7 +53,7 @@ onMounted(() => {
 }
 
 .main {
-  min-height: calc(100vh - 100px);
+  min-height: calc(100vh - 120px);
 }
 
 .custom-header {
