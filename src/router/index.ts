@@ -31,6 +31,14 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import('@/pages/Contacts.vue'),
   },
   {
+    path: '/gsap',
+    name: 'Gsap',
+    meta: {
+      title: 'Gsap Page',
+    },
+    component: () => import('@/pages/Gsap.vue'),
+  },
+  {
     path: '/403',
     name: '403',
     component: () => import('@/pages/system-view/no-permission.vue'),

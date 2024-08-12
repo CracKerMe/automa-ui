@@ -18,7 +18,9 @@ const { t } = useI18n();
           alt="Logo"
           class="w-10 inline-block"
         />
-        <p class="ml-2 inline-block text-lg align-middle">Turns</p>
+        <p class="ml-2 inline-block text-lg align-middle">
+          {{ t('common.title') }}
+        </p>
       </router-link>
     </div>
     <div
@@ -43,7 +45,6 @@ const { t } = useI18n();
           class="resource-dropdown rounded-lg shadow-2xl bottom-auto left-1/2 hidden lg:block -translate-x-1/2 max-w-5xl xl:max-w-6xl mt-2 mx-auto bg-white dark:bg-black transform rounded-lg transition-transform ui-card p-4 bottom-auto left-1/2 hidden lg:block -translate-x-1/2 max-w-5xl xl:max-w-6xl mt-2 mx-auto"
         >
           <nav class="flex space-x-2 xl:space-x-4">
-            <!-- Tutorials / Documentation / Blog / Youtube -->
             <router-link
               to="/tutorials"
               class="p-4 hover:bg-gray-2 rounded-lg transition w-64 lg:w-72 dark:hover:bg-gray-800"
@@ -55,7 +56,7 @@ const { t } = useI18n();
               </span>
               <p class="font-semibold mt-2">{{ t('common.tutorials') }}</p>
               <p class="text-gray-600 leading-tight mt-px">
-                Learn how to automate your workflow using Turns
+                {{ t('resources-tip-1') }}
               </p>
             </router-link>
             <router-link
@@ -69,7 +70,7 @@ const { t } = useI18n();
               </span>
               <p class="font-semibold mt-2">{{ t('common.documentation') }}</p>
               <p class="text-gray-600 leading-tight mt-px">
-                Learn about Turns and its functionalities
+                {{ t('resources-tip-2') }}
               </p>
             </router-link>
             <router-link
@@ -83,7 +84,7 @@ const { t } = useI18n();
               </span>
               <p class="font-semibold mt-2">{{ t('common.blog') }}</p>
               <p class="text-gray-600 leading-tight mt-px">
-                Our latest news, updates, and announcements
+                {{ t('resources-tip-3') }}
               </p>
             </router-link>
             <router-link
@@ -97,8 +98,36 @@ const { t } = useI18n();
               </span>
               <p class="font-semibold mt-2">{{ t('common.youtube') }}</p>
               <p class="text-gray-600 leading-tight mt-px">
-                Explore our video tutorials
+                {{ t('resources-tip-4') }}
               </p>
+            </router-link>
+          </nav>
+        </div>
+      </DropDown>
+      <DropDown class="resource por">
+        <template #trigger>
+          <span class="nav-item">
+            Demo
+            <i-material-symbols:keyboard-arrow-down
+              class="nav-item-arrow-down transition-all duration-300"
+            />
+          </span>
+        </template>
+        <div
+          class="resource-dropdown rounded-lg shadow-2xl bottom-auto left-1/2 hidden lg:block -translate-x-1/2 max-w-5xl xl:max-w-6xl mt-2 mx-auto bg-white dark:bg-black transform rounded-lg transition-transform ui-card p-4 bottom-auto left-1/2 hidden lg:block -translate-x-1/2 max-w-5xl xl:max-w-6xl mt-2 mx-auto"
+        >
+          <nav class="flex space-x-2 xl:space-x-4">
+            <router-link
+              to="/gsap"
+              class="p-4 hover:bg-gray-2 rounded-lg transition w-64 lg:w-72 dark:hover:bg-gray-800"
+            >
+              GSAP
+            </router-link>
+            <router-link
+              to="/contacts"
+              class="p-4 hover:bg-gray-2 rounded-lg transition w-64 lg:w-72 dark:hover:bg-gray-800"
+            >
+              Contacts
             </router-link>
           </nav>
         </div>
@@ -195,6 +224,7 @@ const { t } = useI18n();
     &.router-link-exact-active {
       color: #ffffff;
     }
+
     &:hover {
       background-color: rgb(39, 39, 42, 0.05);
     }
