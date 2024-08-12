@@ -1,6 +1,8 @@
 <template>
   <div>
-    <div class="box"></div>
+    <div ref="green" class="box green" />
+    <div ref="purple" class="box purple" />
+    <div ref="blue" class="box blue" />
     <div class="h-screen bg-coolgray">
       继续往下滚动，我会强制页面横向滚动 预览所有的内容！
     </div>
@@ -25,14 +27,24 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Observer } from 'gsap/Observer';
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 import { MotionPathPlugin } from 'gsap/MotionPathPlugin';
+import { Draggable } from 'gsap/Draggable';
+import { Flip } from 'gsap/Flip';
 
-gsap.registerPlugin(ScrollTrigger, Observer, ScrollToPlugin, MotionPathPlugin);
-
+gsap.registerPlugin(
+  ScrollTrigger,
+  Draggable,
+  Flip,
+  Observer,
+  ScrollToPlugin,
+  MotionPathPlugin,
+);
+const green = ref(null);
+const purple = ref(null);
+const blue = ref(null);
 onMounted(() => {
-  gsap.to('.box', {
-    scrollTrigger: '.box', // start animation when ".box" enters the viewport
-    x: 500,
-  });
+  gsap.to(green.value, { rotation: 360, x: 400, duration: 1 });
+  gsap.from(purple.value, { rotation: -360, x: -100, duration: 1 });
+  gsap.fromTo(blue.value, { x: -100 }, { rotation: 360, x: 500, duration: 1 });
 
   let sections = gsap.utils.toArray('.panel');
   gsap.to(sections, {
@@ -52,9 +64,28 @@ onMounted(() => {
 
 <style scoped lang="scss">
 .box {
-  width: 100px;
-  height: 100px;
-  background-color: rgba(255, 0, 0, 0.2);
+  width: 75px;
+  height: 75px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: #28a92b;
+  font-weight: 600;
+  color: var(--light);
+}
+
+.purple {
+  background-color: #8d3dae;
+}
+
+.blue {
+  background-color: #2c7ad2;
+}
+
+.green {
+  background-color: #28a92b;
 }
 
 .my-container {

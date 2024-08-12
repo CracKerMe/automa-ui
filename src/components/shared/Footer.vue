@@ -11,14 +11,14 @@ const year = ref(new Date().getFullYear());
     class="footer w-full flex justify-center items-center text-primary-dark dark:text-ternary-light"
   >
     @{{ year }}&nbsp;&nbsp;
-    <a
+    <!-- <a
       class="link__item underline"
       href="https://github.com/yugasun/vue-template"
       target="_blank"
     >
       Github
     </a>
-    <span class="p-2"> | </span>
+    <span class="p-2"> | </span> -->
     <a
       class="link__item underline"
       href="https://vitejs.dev/guide/features.html"

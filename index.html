@@ -4,20 +4,30 @@
     <meta charset="UTF-8" />
     <title>cnSaaS.top - Your automation work assistant</title>
     <link rel="icon" type="image/svg" href="/logo.svg" />
+    <link rel="stylesheet" href="./src/assets/loading/loading.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
+    <meta name="description" content="Your automation work assistant" />
+    <meta name="keywords" content="cnsaas,cnSaaS,SaaS,automation" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta
       name="og:title"
       content="cnSaaS.top - Your automation work assistant"
     />
-    <meta name="og:description" content="" />
+    <meta name="og:description" content="Your automation work assistant" />
     <meta property="og:image" content="/logo.svg" />
     <link rel="apple-touch-icon" href="/pwa-192x192.png" />
   </head>
 
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <div class="loading-container">
+        <div id="loadingLogo" class="loading-svg"></div>
+        <div class="loading-title">Loading...</div>
+      </div>
+      <script src="./src/assets/loading/loading.js"></script>
+    </div>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>

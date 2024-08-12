@@ -1,9 +1,22 @@
 <script lang="ts" setup>
 import { useI18n } from 'vue-i18n';
+import { useSystemStore } from '@/store/system';
+const systemStore = useSystemStore();
 
 const { availableLocales, locale } = useI18n();
 
 const languageDropdownRef = ref();
+
+const calcLocaleFn = (locale: string) => {
+  switch (locale) {
+    case 'en':
+      return 'English';
+    case 'zh-CN':
+      return '中文';
+    default:
+      return locale;
+  }
+};
 
 // function toggleLocales() {
 //   // change to some real logic
@@ -14,6 +27,7 @@ const languageDropdownRef = ref();
 function setLanguage(_locale: string) {
   locale.value = _locale;
   languageDropdownRef.value.handleClose();
+  systemStore.setLocale(_locale);
 }
 </script>
 
@@ -34,7 +48,7 @@ function setLanguage(_locale: string) {
           :class="localeStr === locale ? 'active' : ''"
           @click.prevent="() => setLanguage(localeStr)"
         >
-          {{ localeStr }}
+          {{ calcLocaleFn(localeStr) }}
         </el-dropdown-item>
       </el-dropdown-menu>
     </template>

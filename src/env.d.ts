@@ -15,7 +15,7 @@ declare module 'virtual:pwa-register' {
     onRegistered?: (
       registration: ServiceWorkerRegistration | undefined,
     ) => void;
-    onRegisterError?: (error: any) => void;
+    onRegisterError?: (error: Error) => void;
   }
 
   export function registerSW(
@@ -34,7 +34,7 @@ declare module 'virtual:pwa-register/vue' {
     onRegistered?: (
       registration: ServiceWorkerRegistration | undefined,
     ) => void;
-    onRegisterError?: (error: any) => void;
+    onRegisterError?: (error: Error) => void;
   }
 
   export function useRegisterSW(options?: RegisterSWOptions): {
@@ -43,3 +43,6 @@ declare module 'virtual:pwa-register/vue' {
     updateServiceWorker: (reloadPage?: boolean) => Promise<void>;
   };
 }
+
+declare module 'element-plus/dist/locale/zh-cn.mjs';
+declare module 'element-plus/dist/locale/en.mjs';
