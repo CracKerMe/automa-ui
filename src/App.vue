@@ -14,6 +14,7 @@ const userStore = useUserStore();
 const systemStore = useSystemStore();
 const locale = computed(() => (systemStore.locale === 'zh-CN' ? zhCn : en));
 userStore.initUser();
+systemStore.initLocale();
 
 onMounted(() => {
   if (!/iPhone|iPad|Macintosh/i.test(navigator.userAgent)) {

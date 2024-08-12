@@ -18,17 +18,17 @@ const calcLocaleFn = (locale: string) => {
   }
 };
 
-// function toggleLocales() {
-//   // change to some real logic
-//   const locales = availableLocales;
-//   locale.value = locales[(locales.indexOf(locale.value) + 1) % locales.length];
-// }
-
 function setLanguage(_locale: string) {
   locale.value = _locale;
   languageDropdownRef.value.handleClose();
   systemStore.setLocale(_locale);
+  localStorage.setItem('locale', _locale);
 }
+
+onMounted(() => {
+  const _locale = localStorage.getItem('locale') || 'en';
+  setLanguage(_locale);
+});
 </script>
 
 <template>
