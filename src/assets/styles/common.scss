@@ -1,15 +1,3 @@
-.por {
-  position: relative;
-}
-
-.poa {
-  position: absolute;
-}
-
-.pof {
-  position: fixed;
-}
-
 .clearfix::after {
   content: '';
   display: block;
@@ -18,30 +6,6 @@
   clear: both;
   font-size: 0;
   line-height: 0;
-}
-
-.fl {
-  float: left;
-}
-
-.fr {
-  float: right;
-}
-
-.ovh {
-  overflow: hidden;
-}
-
-.iblock {
-  display: inline-block;
-}
-
-.block {
-  display: block;
-}
-
-.hide {
-  display: none;
 }
 
 .line-one {

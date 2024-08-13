@@ -58,6 +58,6 @@ onMounted(() => {
 <style lang="scss" scoped>
 :global(.language-dropdown .el-dropdown-menu__item.active) {
   color: #646cff;
-  background-color: #f0f3ff;
+  // background-color: #f0f3ff;
 }
 </style>

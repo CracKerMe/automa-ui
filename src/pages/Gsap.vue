@@ -1,8 +1,10 @@
 <template>
   <div>
-    <div ref="green" class="box green" />
-    <div ref="purple" class="box purple" />
-    <div ref="blue" class="box blue" />
+    <div class="overflow-hidden w-full">
+      <div ref="green" class="box green" />
+      <div ref="purple" class="box purple" />
+      <div ref="blue" class="box blue" />
+    </div>
     <div class="h-screen bg-coolgray">
       继续往下滚动，我会强制页面横向滚动 预览所有的内容！
     </div>

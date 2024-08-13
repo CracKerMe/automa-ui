@@ -54,7 +54,7 @@ const { t } = useI18n();
               >
                 <i-material-symbols:book-4-outline class="text-3xl" />
               </span>
-              <p class="font-semibold mt-2">{{ t('common.tutorials') }}</p>
+              <p class="font-semibold my-2">{{ t('common.tutorials') }}</p>
               <p class="text-gray-600 leading-tight mt-px">
                 {{ t('resources-tip-1') }}
               </p>
@@ -68,7 +68,7 @@ const { t } = useI18n();
               >
                 <i-material-symbols:apk-document-outline class="text-3xl" />
               </span>
-              <p class="font-semibold mt-2">{{ t('common.documentation') }}</p>
+              <p class="font-semibold my-2">{{ t('common.documentation') }}</p>
               <p class="text-gray-600 leading-tight mt-px">
                 {{ t('resources-tip-2') }}
               </p>
@@ -82,7 +82,7 @@ const { t } = useI18n();
               >
                 <i-ic:outline-edit-location class="text-3xl" />
               </span>
-              <p class="font-semibold mt-2">{{ t('common.blog') }}</p>
+              <p class="font-semibold my-2">{{ t('common.blog') }}</p>
               <p class="text-gray-600 leading-tight mt-px">
                 {{ t('resources-tip-3') }}
               </p>
@@ -96,7 +96,7 @@ const { t } = useI18n();
               >
                 <i-tdesign:logo-youtube class="text-3xl" />
               </span>
-              <p class="font-semibold mt-2">{{ t('common.youtube') }}</p>
+              <p class="font-semibold my-2">{{ t('common.youtube') }}</p>
               <p class="text-gray-600 leading-tight mt-px">
                 {{ t('resources-tip-4') }}
               </p>
@@ -119,13 +119,13 @@ const { t } = useI18n();
           <nav class="flex flex-col">
             <router-link
               to="/gsap"
-              class="p-4 hover:bg-gray-2 rounded-lg transition w-64 lg:w-72 dark:hover:bg-gray-800"
+              class="p-4 hover:bg-gray-2 rounded-lg transition w-64 lg:w-72 dark:hover:bg-gray-800 hover:scale-105"
             >
               GSAP
             </router-link>
             <router-link
               to="/contacts"
-              class="p-4 hover:bg-gray-2 rounded-lg transition w-64 lg:w-72 dark:hover:bg-gray-800"
+              class="p-4 hover:bg-gray-2 rounded-lg transition w-64 lg:w-72 dark:hover:bg-gray-800 hover:scale-105"
             >
               Contacts
             </router-link>
