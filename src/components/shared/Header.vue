@@ -42,7 +42,7 @@ const { t } = useI18n();
           </span>
         </template>
         <div
-          class="resource-dropdown rounded-lg shadow-2xl bottom-auto left-1/2 hidden lg:block -translate-x-1/2 max-w-5xl xl:max-w-6xl mt-2 mx-auto bg-white dark:bg-black transform rounded-lg transition-transform ui-card p-4 bottom-auto left-1/2 hidden lg:block -translate-x-1/2 max-w-5xl xl:max-w-6xl mt-2 mx-auto"
+          class="resource-dropdown rounded-lg shadow-2xl bottom-auto left-1/2 hidden lg:block -translate-x-1/2 max-w-5xl xl:max-w-6xl mt-2 mx-auto bg-white dark:bg-black transform rounded-lg transition-transform p-4"
         >
           <nav class="flex space-x-2 xl:space-x-4">
             <router-link
@@ -114,9 +114,9 @@ const { t } = useI18n();
           </span>
         </template>
         <div
-          class="resource-dropdown rounded-lg shadow-2xl bottom-auto left-1/2 hidden lg:block -translate-x-1/2 max-w-5xl xl:max-w-6xl mt-2 mx-auto bg-white dark:bg-black transform rounded-lg transition-transform ui-card p-4 bottom-auto left-1/2 hidden lg:block -translate-x-1/2 max-w-5xl xl:max-w-6xl mt-2 mx-auto"
+          class="resource-dropdown rounded-lg shadow-2xl bottom-auto left-1/2 hidden lg:block -translate-x-1/2 max-w-5xl xl:max-w-6xl mt-2 mx-auto bg-white dark:bg-black transform rounded-lg transition-transform p-4"
         >
-          <nav class="flex space-x-2 xl:space-x-4">
+          <nav class="flex flex-col">
             <router-link
               to="/gsap"
               class="p-4 hover:bg-gray-2 rounded-lg transition w-64 lg:w-72 dark:hover:bg-gray-800"
