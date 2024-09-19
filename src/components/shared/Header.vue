@@ -129,6 +129,12 @@ const { t } = useI18n();
             >
               Contacts
             </router-link>
+            <router-link
+              to="/editor"
+              class="p-4 hover:bg-gray-2 rounded-lg transition w-64 lg:w-72 dark:hover:bg-gray-800 hover:scale-105"
+            >
+              Fabric Editor
+            </router-link>
           </nav>
         </div>
       </DropDown>

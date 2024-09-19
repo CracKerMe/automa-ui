@@ -5,27 +5,24 @@
     @mouseleave="leaveDropdown"
   >
     <slot name="trigger" />
-    <div
-      class="drop-down-box"
-      v-show="showDrop"
-    >
+    <div v-show="showDrop" class="drop-down-box">
       <slot />
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue'
+import { ref } from 'vue';
 
-const showDrop = ref(false)
+const showDrop = ref(false);
 
 const enterDropdown = () => {
-  showDrop.value = true
-}
+  showDrop.value = true;
+};
 
 const leaveDropdown = () => {
-  showDrop.value = false
-}
+  showDrop.value = false;
+};
 </script>
 
 <style>

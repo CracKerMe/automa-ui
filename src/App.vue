@@ -8,7 +8,6 @@ import { useSystemStore } from '@/store/system';
 import ReloadPrompt from '@/pwa/ReloadPrompt.vue';
 
 import Header from '@/components/shared/Header.vue';
-import Footer from '@/components/shared/Footer.vue';
 
 const userStore = useUserStore();
 const systemStore = useSystemStore();
@@ -30,7 +29,7 @@ onMounted(() => {
       >
         <Header />
       </div>
-      <el-main class="main relative">
+      <el-main class="!p-0">
         <div
           class="hidden dark:block bg-video fixed left-0 top-0 -z-1 w-full h-screen"
         >
@@ -46,9 +45,6 @@ onMounted(() => {
         </div>
         <RouterView />
       </el-main>
-      <el-footer style="--el-footer-height: 40px">
-        <Footer />
-      </el-footer>
     </el-container>
     <ReloadPrompt />
   </ElConfigProvider>
@@ -62,7 +58,7 @@ onMounted(() => {
 }
 
 .main {
-  min-height: calc(100vh - 120px);
+  height: calc(100vh - 80px);
 }
 
 .custom-header {

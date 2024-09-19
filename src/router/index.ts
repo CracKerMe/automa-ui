@@ -39,6 +39,14 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import('@/pages/Gsap.vue'),
   },
   {
+    path: '/editor',
+    name: 'Editor',
+    meta: {
+      title: 'Fabric Editor Page',
+    },
+    component: () => import('@/pages/Editor.vue'),
+  },
+  {
     path: '/403',
     name: '403',
     component: () => import('@/pages/system-view/no-permission.vue'),
