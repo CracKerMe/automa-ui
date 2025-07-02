@@ -14,7 +14,7 @@
     "commit": "git-cz",
     "release": "npx bumpp --push --tag --commit 'release: v'",
     "postinstall": "npx msw init public --save",
-    "prepare": "husky install",
+    "prepare": "husky",
     "test": "pnpm run test:unit",
     "test:unit": "vitest run",
     "test:unit:update": "vitest run --update",
