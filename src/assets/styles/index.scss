@@ -1,6 +1,6 @@
 /* @tailwind base; */
-@import './reset';
-@import './common';
+@use './reset';
+@use './common';
 
 a,
 a:active,

@@ -1,5 +1,4 @@
 {
-  "common.title": "轮次",
   "common.Detail": "详情页",
   "common.about": "关于",
   "common.allRightsReserved": "所有版权保留",
@@ -23,9 +22,12 @@
   "common.support": "支持",
   "common.template": "模版",
   "common.terms": "条款",
+  "common.title": "轮次",
   "common.tutorials": "教程",
   "common.welcome": "欢迎, {name}",
   "common.youtube": "油管",
+  "contacts": "联系人",
+  "demo": "案例",
   "detail.loginTip": "这是详情页，需要登录",
   "resources-tip-1": "了解如何使用 Turns 自动化工作流",
   "resources-tip-2": "了解 Turns 和其功能",

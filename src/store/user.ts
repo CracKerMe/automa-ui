@@ -11,8 +11,7 @@ interface UserState {
   userInfo: UserInfo | null;
 }
 
-export const useUserStore = defineStore({
-  id: 'user',
+export const useUserStore = defineStore('user', {
   state(): UserState {
     return {
       userInfo: null,

@@ -1,5 +1,4 @@
 {
-  "common.title": "TURNS",
   "common.Detail": "Details",
   "common.about": "About",
   "common.allRightsReserved": "All rights reserved.",
@@ -23,9 +22,12 @@
   "common.support": "Support",
   "common.template": "Template",
   "common.terms": "Terms",
+  "common.title": "TURNS",
   "common.tutorials": "Tutorials",
   "common.welcome": "Welcome, {name}",
   "common.youtube": "YouTube",
+  "contacts": "Contacts",
+  "demo": "Demo",
   "detail.loginTip": "This is Detail Page, need login",
   "resources-tip-1": "Learn how to automate your workflow using Turns",
   "resources-tip-2": "Learn about Turns and its functionalities",

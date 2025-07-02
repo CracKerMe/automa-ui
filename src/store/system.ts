@@ -1,6 +1,5 @@
 import { defineStore } from 'pinia';
-export const useSystemStore = defineStore({
-  id: 'system',
+export const useSystemStore = defineStore('system', {
   state() {
     return {
       _locale: localStorage.getItem('locale') || 'en', // en | zh-CN

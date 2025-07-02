@@ -107,7 +107,7 @@ const { t } = useI18n();
       <DropDown class="resource por">
         <template #trigger>
           <span class="nav-item">
-            Demo
+            {{ t('demo') }}
             <i-material-symbols:keyboard-arrow-down
               class="nav-item-arrow-down transition-all duration-300"
             />
@@ -127,7 +127,7 @@ const { t } = useI18n();
               to="/contacts"
               class="p-4 hover:bg-gray-2 rounded-lg transition w-64 lg:w-72 dark:hover:bg-gray-800 hover:scale-105"
             >
-              Contacts
+              {{ t('contacts') }}
             </router-link>
             <router-link
               to="/editor"
