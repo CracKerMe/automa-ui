@@ -2,93 +2,37 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  border: 0;
-  outline: none;
   outline: none;
 }
 
-/* HTML5 display-role reset for older browsers */
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-  display: block;
+:root {
+  --bg-color: #f5f5f5;
+  --bg-color-alpha: rgb(245 245 245 / 10%); /* 0.1 可调整 */
+}
+
+.dark {
+  --bg-color: #222;
+  --bg-color-alpha: rgb(34 34 34 / 10%); /* 0.1 可调整 */
+}
+
+body {
+  --bg-color: #f5f5f5;
+
+  background-color: #f5f5f5;
+}
+
+html.dark {
+  body {
+    --bg-color: #222;
+
+    background-color: #222;
+  }
 }
 
 html,
 body {
   height: 100%;
 }
-
-body {
-  background-color: #f5f5f5;
-}
-
-html.dark {
-  body {
-    background-color: #222;
-  }
-}
-
-ol,
-ul {
-  list-style: none;
-}
-
-table {
-  border-spacing: 0;
-  border-collapse: collapse;
-}
-
-[hidden] {
-  display: none !important;
-}
-
-a,
-a:hover {
-  text-decoration: none;
-}
-
-img {
-  border: 0;
-
-  &[src=''] {
-    opacity: 0;
-  }
-}
-
-// [type='button'],
-// [type='reset'],
-// [type='submit'],
-// button {
-//   appearance: button;
-//   border: none;
-//   outline: none;
-//   background-color: transparent;
-//   background-image: none;
-//   font-size: 16px;
-//   cursor: pointer;
-
-//   &::-moz-focus-inner {
-//     padding: 0;
-//     border: 0;
-//   }
-
-//   &:focus {
-//     outline: none;
-//   }
-
-//   &:active {
-//     outline: none;
-//   }
-// }
 
 html.is-not-safari {
   scrollbar-width: thin;

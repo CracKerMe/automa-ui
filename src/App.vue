@@ -1,25 +1,25 @@
 <script lang="ts" setup>
-import { ElConfigProvider } from 'element-plus';
-import zhCn from 'element-plus/dist/locale/zh-cn.mjs';
-import en from 'element-plus/dist/locale/en.mjs';
+import { ElConfigProvider } from 'element-plus'
+import zhCn from 'element-plus/dist/locale/zh-cn.mjs'
+import en from 'element-plus/dist/locale/en.mjs'
 
-import { useUserStore } from '@/store/user';
-import { useSystemStore } from '@/store/system';
-import ReloadPrompt from '@/pwa/ReloadPrompt.vue';
+import { useUserStore } from '@/store/user'
+import { useSystemStore } from '@/store/system'
+import ReloadPrompt from '@/pwa/ReloadPrompt.vue'
 
-import Header from '@/components/shared/Header.vue';
+import Header from '@/components/shared/Header.vue'
 
-const userStore = useUserStore();
-const systemStore = useSystemStore();
-const locale = computed(() => (systemStore.locale === 'zh-CN' ? zhCn : en));
-userStore.initUser();
-systemStore.initLocale();
+const userStore = useUserStore()
+const systemStore = useSystemStore()
+const locale = computed(() => (systemStore.locale === 'zh-CN' ? zhCn : en))
+userStore.initUser()
+systemStore.initLocale()
 
 onMounted(() => {
   if (!/iPhone|iPad|Macintosh/i.test(navigator.userAgent)) {
-    document.documentElement.classList.add('is-not-safari');
+    document.documentElement.classList.add('is-not-safari')
   }
-});
+})
 </script>
 <template>
   <ElConfigProvider :locale="locale">
@@ -30,9 +30,7 @@ onMounted(() => {
         <Header />
       </div>
       <el-main class="!p-0">
-        <div
-          class="hidden dark:block bg-video fixed left-0 top-0 -z-1 w-full h-screen"
-        >
+        <div class="hidden dark:block bg-video fixed left-0 top-0 -z-10 w-full h-screen">
           <video
             class="w-[101%] h-[101%] object-cover absolute -my-[1px]"
             autoplay
@@ -51,10 +49,10 @@ onMounted(() => {
 </template>
 <style lang="scss">
 #app {
+  height: 100%;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  height: 100%;
 }
 
 .main {
@@ -62,9 +60,8 @@ onMounted(() => {
 }
 
 .custom-header {
-  background-image: radial-gradient(transparent 1px, var(--bg-color) 1px);
+  background-image: radial-gradient(transparent 1px, var(--bg-color-alpha) 2px);
   background-size: 4px 4px;
   backdrop-filter: saturate(50%) blur(8px);
-  -webkit-backdrop-filter: saturate(50%) blur(8px);
 }
 </style>

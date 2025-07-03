@@ -6,13 +6,13 @@ import HeroPng from '@/assets/images/hero.png';
 </script>
 
 <template>
-  <div class="w-full flex flex-col items-center justify-center gap-y-2xl">
+  <div class="w-full flex flex-col items-center justify-center gap-y-4">
     <section
       class="w-full pt-12 lg:pt-28 pb-12 sm:pb-16 lg:pb-40 bg-gray-200 dark:bg-gray-800"
     >
       <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div
-          class="grid max-w-lg grid-cols-1 mx-auto lg:max-w-full lg:items-center lg:grid-cols-2 gap-y-12 lg:gap-x-16"
+          class="grid max-w-lg grid-cols-1 mx-auto lg:max-w-full lg:items-center lg:grid-cols-2 gap-y-4 lg:gap-x-16"
         >
           <div class="text-center lg:text-left">
             <h1

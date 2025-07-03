@@ -39,8 +39,8 @@ onBeforeMount(() => {
     </span>
     <br />
     <span>
-      Using ENV mode: <strong class="font-bold">{{ mode }}</strong></span
-    >
+      Using ENV mode: <strong class="font-bold">{{ mode }}</strong>
+    </span>
   </p>
 </template>
 <style lang="scss" scoped></style>

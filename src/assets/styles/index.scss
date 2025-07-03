@@ -2,12 +2,6 @@
 @use './reset';
 @use './common';
 
-a,
-a:active,
-a:visited {
-  color: var(--el-primary-color);
-}
-
 .container {
   width: 100%;
   margin-right: auto;

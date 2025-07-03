@@ -1,4 +1,8 @@
-import axios, { AxiosResponse, InternalAxiosRequestConfig } from 'axios';
+import axios, {
+  AxiosResponse,
+  InternalAxiosRequestConfig,
+  AxiosError,
+} from 'axios';
 
 const service = axios.create();
 
@@ -8,8 +12,8 @@ service.interceptors.request.use(
     // do something
     return config;
   },
-  (error: any) => {
-    Promise.reject(error);
+  (error: AxiosError) => {
+    return Promise.reject(error);
   },
 );
 
@@ -19,7 +23,7 @@ service.interceptors.response.use(
     // do something
     return response.data;
   },
-  (error: any) => {
+  (error: AxiosError) => {
     // do something
     return Promise.reject(error);
   },

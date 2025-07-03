@@ -2,20 +2,18 @@
 import { useRegisterSW } from 'virtual:pwa-register/vue';
 
 // replaced dyanmicaly
-const reloadSW: any = '__RELOAD_SW__';
+const reloadSW = '__RELOAD_SW__' as 'true' | 'false';
 
 const { offlineReady, needRefresh, updateServiceWorker } = useRegisterSW({
   immediate: true,
-  onRegistered(r: any) {
+  onRegistered(r: ServiceWorkerRegistration | undefined) {
     if (reloadSW === 'true') {
       r &&
         setInterval(async () => {
-          // eslint-disable-next-line no-console
           console.log('Checking for sw update');
           await r.update();
         }, 20000 /* 20s for testing purposes */);
     } else {
-      // eslint-disable-next-line no-console
       console.log(`SW Registered: ${r}`);
     }
   },

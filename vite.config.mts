@@ -9,7 +9,6 @@ import * as path from 'path';
 import { ManifestOptions, VitePWA, VitePWAOptions } from 'vite-plugin-pwa';
 import replace from '@rollup/plugin-replace';
 import VueI18n from '@intlify/unplugin-vue-i18n/vite';
-import Unocss from 'unocss/vite';
 import VueDevTools from 'vite-plugin-vue-devtools';
 import Icons from 'unplugin-icons/vite';
 import viteCompression from 'vite-plugin-compression';
@@ -87,9 +86,10 @@ export default defineConfig({
   },
   css: {
     preprocessorOptions: {
-      scss: {
-        // additionalData: `@use "@/assets/styles/element/index.scss" as *;`,
-      },
+      // scss: {
+      //   additionalData: `@use "@/assets/styles/element/index.scss" as *;`,
+      // },
+      scss: { api: 'modern-compiler' },
     },
   },
   plugins: [
@@ -119,10 +119,6 @@ export default defineConfig({
       algorithm: 'gzip',
       ext: '.gz',
     }),
-
-    // https://github.com/antfu/unocss
-    // see unocss.config.ts for config
-    Unocss(),
 
     VitePWA(pwaOptions),
 

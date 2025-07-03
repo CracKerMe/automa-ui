@@ -32,18 +32,18 @@ const leaveDropdown = () => {
 
 .drop-down-box {
   position: absolute;
-  animation: fadeinT 0.5s 1;
+  animation: fade-in-t 0.5s 1;
 }
 
-@keyframes fadeinT {
+@keyframes fade-in-t {
   0% {
-    opacity: 0;
     transform: translateY(-20px);
+    opacity: 0;
   }
 
-  to {
-    opacity: 1;
+  100% {
     transform: translateY(0);
+    opacity: 1;
   }
 }
 </style>

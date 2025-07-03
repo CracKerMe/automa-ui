@@ -27,16 +27,20 @@ const year = ref(new Date().getFullYear());
       Vite {{ t('common.docs') }}
     </a>
     <span class="p-2"> | </span>
-    <a class="link__item underline" href="https://v3.vuejs.org/" target="_blank"
-      >Vue3 {{ t('common.docs') }}</a
+    <a
+      class="link__item underline"
+      href="https://v3.vuejs.org/"
+      target="_blank"
     >
+      Vue3 {{ t('common.docs') }}
+    </a>
   </div>
 </template>
 <style lang="scss" scoped>
 .footer {
   height: 40px;
-  line-height: 40px;
   font-size: 16px;
+  line-height: 40px;
 
   .link__item {
     color: var(--el-color-primary);

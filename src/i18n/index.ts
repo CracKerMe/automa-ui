@@ -2,12 +2,15 @@ import { createI18n } from 'vue-i18n';
 
 // Import i18n resources
 // https://vitejs.dev/guide/features.html#glob-import
-const messages = Object.fromEntries(
+const messages: any = Object.fromEntries(
   Object.entries(
     // glob yaml/yml/ts files
-    import.meta.glob<{ default: any }>('../../locales/*.{yaml,yml,ts,json}', {
-      eager: true,
-    }),
+    import.meta.glob<{ default: Record<string, unknown> }>(
+      '../../locales/*.{yaml,yml,ts,json}',
+      {
+        eager: true,
+      },
+    ),
   ).map(([key, value]) => {
     if (key.endsWith('.ts')) {
       return [key.slice(14, -3), value.default];

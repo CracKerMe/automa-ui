@@ -38,7 +38,7 @@ onMounted(() => {
     popper-class="language-dropdown"
   >
     <el-button :circle="true">
-      <div i-carbon-language />
+      <i-carbon-language />
     </el-button>
     <template #dropdown>
       <el-dropdown-menu>

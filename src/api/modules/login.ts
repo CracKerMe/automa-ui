@@ -1,6 +1,6 @@
 import request from '@/utils/axios';
 
-interface IResponseType<P = Record<string, any>> {
+interface IResponseType<P = Record<string, unknown>> {
   code?: number;
   status: number;
   msg: string;

@@ -156,13 +156,11 @@ const { t } = useI18n();
 }
 
 .nav-item {
-  padding: 0.35rem 0.75rem;
-  border-radius: 0.375rem;
   display: flex;
+  position: relative;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
-  position: relative;
+  padding: 0.35rem 0.75rem;
   transition:
     color,
     background-color,
@@ -176,30 +174,30 @@ const { t } = useI18n();
     filter,
     backdrop-filter,
     -webkit-backdrop-filter cubic-bezier(0.4, 0, 0.2, 1) 0.15s;
+  border-radius: 0.375rem;
+  cursor: pointer;
 
   &:not(:nth-of-type(1)) {
     margin-left: 1rem;
   }
 
   &.router-link-exact-active {
-    color: #000000;
+    color: #000;
   }
 
   &:hover {
-    background-color: rgb(39, 39, 42, 0.05);
+    background-color: rgb(39 39 42 / 5%);
     color: var(--el-color-primary);
   }
 
-  &:hover {
-    .nav-item-arrow-down {
-      transform: rotate(180deg);
-    }
+  .nav-item-arrow-down:hover {
+    transform: rotate(180deg);
   }
 }
 
 .resource {
-  margin-left: 1rem;
   z-index: 50;
+  margin-left: 1rem;
 
   &-dropdown {
     // width: 318px;
@@ -210,16 +208,16 @@ const { t } = useI18n();
     content: '';
     display: inline-block;
     position: absolute;
+    bottom: -10px;
+    left: 0;
     width: 100%;
     height: 20px;
     background-color: transparent;
-    bottom: -10px;
-    left: 0;
   }
 
   ::v-deep(.drop-down-box) {
-    left: 0;
     top: 40px;
+    left: 0;
   }
 }
 </style>
@@ -228,11 +226,11 @@ const { t } = useI18n();
 .dark {
   .nav-item {
     &.router-link-exact-active {
-      color: #ffffff;
+      color: #fff;
     }
 
     &:hover {
-      background-color: rgb(39, 39, 42, 0.05);
+      background-color: rgb(39 39 42 / 5%);
     }
   }
 }

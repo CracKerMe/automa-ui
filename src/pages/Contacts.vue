@@ -11,7 +11,7 @@
           @change="handleChangeFn"
         />
         <div class="file-zone-holder">
-          <div class="file-zone-icon"></div>
+          <div class="file-zone-icon" />
           <div class="file-zone-text">
             <div class="file-zone-title">
               <div class="file-zone-title-text shadow-2xl">
@@ -45,7 +45,7 @@
           :align="header === 'name' ? 'left' : 'center'"
           :header-align="header === 'name' ? 'left' : 'center'"
           :class-name="header === 'name' ? 'text-bold' : ''"
-        ></el-table-column>
+        />
       </el-table>
     </div>
   </div>
@@ -121,56 +121,66 @@ const handleChangeFn = (e: Event) => {
 
 <style lang="scss" scoped>
 .file-zone {
-  width: auto;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  width: auto;
   border: 1px dashed var(--el-border-color);
   border-radius: 14px;
   cursor: pointer;
+
   &:hover {
     border-color: var(--el-color-primary);
   }
+
   .file-input {
     display: none;
+
     &:hover {
       border-color: var(--el-color-primary);
     }
+
     &:focus {
       border-color: var(--el-color-primary);
     }
+
     &:focus-visible {
       border-color: var(--el-color-primary);
       outline: none;
     }
   }
+
   .file-zone-holder {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+
     .file-zone-icon {
       width: 40px;
       height: 40px;
       background-image: url('../../assets/images/file-icon.svg');
-      background-size: contain;
       background-repeat: no-repeat;
       background-position: center;
+      background-size: contain;
+
       &:hover {
         background-image: url('../../assets/images/file-icon-hover.svg');
       }
     }
+
     .file-zone-text {
       .file-zone-title {
         display: flex;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
+        justify-content: center;
+
         .file-zone-title-text {
+          margin-bottom: 20px;
+          color: var(--el-text-color-secondary);
           font-size: 14px;
           font-weight: 500;
-          color: var(--el-text-color-secondary);
-          margin-bottom: 20px;
         }
       }
     }

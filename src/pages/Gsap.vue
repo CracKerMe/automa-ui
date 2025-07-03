@@ -5,20 +5,20 @@
       <div ref="purple" class="box purple" />
       <div ref="blue" class="box blue" />
     </div>
-    <div class="h-screen bg-coolgray">
+    <div class="h-screen bg-[gray]">
       继续往下滚动，我会强制页面横向滚动 预览所有的内容！
     </div>
     <div class="w-full overflow-hidden">
       <div class="my-container h-screen pt-[80px]">
-        <section class="panel w-full h-full bg-red">ONE</section>
-        <section class="panel w-full h-full bg-orange">TWO</section>
-        <section class="panel w-full h-full bg-purple">THREE</section>
-        <section class="panel w-full h-full bg-green">FOUR</section>
-        <section class="panel w-full h-full bg-amber">FIVE</section>
+        <section class="panel w-full h-full bg-[red]">ONE</section>
+        <section class="panel w-full h-full bg-[orange]">TWO</section>
+        <section class="panel w-full h-full bg-[purple]">THREE</section>
+        <section class="panel w-full h-full bg-[green]">FOUR</section>
+        <section class="panel w-full h-full bg-[skyblue]">FIVE</section>
       </div>
     </div>
-    <div class="h-screen bg-coolgray">恭喜你看完了</div>
-    <div class="h-screen bg-blue">向上滚动可以再看一遍</div>
+    <div class="h-screen bg-[gray]">恭喜你看完了</div>
+    <div class="h-screen bg-[pink]">向上滚动可以再看一遍</div>
   </div>
 </template>
 
@@ -66,16 +66,16 @@ onMounted(() => {
 
 <style scoped lang="scss">
 .box {
-  width: 75px;
-  height: 75px;
-  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
+  width: 75px;
+  height: 75px;
+  border-radius: 12px;
   background-color: #28a92b;
-  font-weight: 600;
   color: var(--light);
+  font-weight: 600;
+  text-align: center;
 }
 
 .purple {
@@ -91,9 +91,9 @@ onMounted(() => {
 }
 
 .my-container {
-  overscroll-behavior: none;
-  width: 500%;
   display: flex;
   flex-wrap: nowrap;
+  width: 500%;
+  overscroll-behavior: none;
 }
 </style>
