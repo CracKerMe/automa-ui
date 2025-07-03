@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+export default {
   darkMode: 'class', // 启用 class 模式暗黑
   content: ['./src/**/*.{html,js,vue,tsx}'],
   theme: {

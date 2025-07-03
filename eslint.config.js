@@ -1,8 +1,6 @@
 import vuePlugin from 'eslint-plugin-vue';
 import typescriptPlugin from '@typescript-eslint/eslint-plugin';
 import typescriptParser from '@typescript-eslint/parser';
-import prettierPlugin from 'eslint-plugin-prettier';
-import prettierConfig from 'eslint-config-prettier';
 import * as vueParser from 'vue-eslint-parser';
 
 export default [
@@ -15,6 +13,8 @@ export default [
       'public/**',
       'coverage/**',
       '*.config.js',
+      'public/mockServiceWorker.js',
+      'index.html',
     ],
   },
   {
@@ -22,7 +22,6 @@ export default [
     plugins: {
       vue: vuePlugin,
       '@typescript-eslint': typescriptPlugin,
-      prettier: prettierPlugin,
     },
     languageOptions: {
       parser: vueParser,
@@ -82,18 +81,6 @@ export default [
         {
           argsIgnorePattern: '^_',
           varsIgnorePattern: '^_',
-        },
-      ],
-
-      // Prettier rules
-      'prettier/prettier': [
-        'error',
-        {
-          singleQuote: true,
-          semi: false,
-          trailingComma: 'es5',
-          printWidth: 100,
-          tabWidth: 2,
         },
       ],
     },

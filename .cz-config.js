@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   types: [
     { value: 'feat', name: 'feat:      New Feature' },
     { value: 'bug', name: 'bug:      Should With Bug Number' },

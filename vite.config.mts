@@ -5,7 +5,7 @@ import AutoImport from 'unplugin-auto-import/vite';
 import Components from 'unplugin-vue-components/vite';
 import IconsResolver from 'unplugin-icons/resolver';
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers';
-import * as path from 'path';
+import { resolve } from 'path';
 import { ManifestOptions, VitePWA, VitePWAOptions } from 'vite-plugin-pwa';
 import replace from '@rollup/plugin-replace';
 import VueI18n from '@intlify/unplugin-vue-i18n/vite';
@@ -67,7 +67,7 @@ if (claims) pwaOptions.registerType = 'autoUpdate';
 export default defineConfig({
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, 'src'),
+      '@': resolve(__dirname, 'src'),
     },
   },
   build: {
@@ -131,7 +131,7 @@ export default defineConfig({
       strictMessage: false,
       fullInstall: true,
       // do not support ts extension
-      include: [path.resolve(__dirname, 'locales/*.{yaml,yml,json}')],
+      include: [resolve(__dirname, 'locales/*.{yaml,yml,json}')],
     }),
 
     replace({
@@ -147,7 +147,7 @@ export default defineConfig({
       compiler: 'vue3',
     }),
     createSvgIconsPlugin({
-      iconDirs: [path.resolve(process.cwd(), 'src/assets/svg')],
+      iconDirs: [resolve(process.cwd(), 'src/assets/svg')],
       symbolId: 'icon-[dir]-[name]',
     }),
   ],

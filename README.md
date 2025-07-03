@@ -25,7 +25,6 @@ Vue template for starter using Vue3 + TypeScript + Vite + Pinia + Unocss 🚀
 - [x] 🌍 [I18n ready](https://vue-i18n.intlify.dev/) Vue I18n Internationalization plugin for Vue.js
 - [x] [msw](https://mswjs.io/docs/) Seamless REST/GraphQL API mocking library for browser and Node.js.
 - [x] [ESLint](https://eslint.org/)
-- [x] [Prettier](https://prettier.io/)
 - [x] [Airbnb Style Guide](https://github.com/airbnb/javascript)
 - [x] [Commitlint](https://github.com/conventional-changelog/commitlint) Lint commit messages
 - [x] [Commitizen](https://github.com/commitizen/cz-cli) The commitizen command line utility.
